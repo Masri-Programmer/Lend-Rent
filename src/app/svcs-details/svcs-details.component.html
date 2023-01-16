@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mb-2 svc-card" routerLink="/service-details" *ngFor="let svc of carServices">
+            <div data-aos="fade-up" data-aos-delay="100"
+                class="service-item py-2 d-flex flex-column justify-content-center px-4 mb-4" style="box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+                    border-radius: 20px;
+                    height: auto;">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div data-aos="zoom-out" data-aos-delay="300"
+                        class="d-flex align-items-center justify-content-center bg-primary ml-n4"
+                        style="width: 80px; height: 80px; border-radius: 20px;">
+                        <i class={{svc.icon}}></i>
+                    </div>
+                    <h1 class="display-2 text-white mt-n2 m-0">0{{svc.id}}</h1>
+                </div>
+                <h4 class="text-uppercase mb-3">{{svc.title}}</h4>
+                <p class="m-0 mb-2">{{svc.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

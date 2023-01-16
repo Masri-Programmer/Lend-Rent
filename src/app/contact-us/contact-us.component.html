@@ -1,0 +1,149 @@
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <h1 class="display-1 text-primary text-center text-uppercase">We can Help</h1>
+        <h1 class="display-4 text-uppercase text-primary text-center mb-5 text-uppercase"><span style="color: black;">ANSWER</span> Your question</h1>
+        
+        <div class="row text-center info">
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-down-right" >
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4 >Location:</h4>
+            <p class="user-select-all">A108 Adam Street, Beirut, DT 535022</p>
+          </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-down-right" data-aos-delay="100">
+            <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4 >Email:</h4>
+                <p class="user-select-all">Lend@gmail.com</p>
+              </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-down-right" data-aos-delay="300">
+          <div class="phone">
+            <i class="bi bi-phone"></i>
+            <h4 >Call:</h4>
+            <p class="user-select-all">+961 70 556 223</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="container  border-3 mt-5 mx-auto" data-aos="fade-down-right" style="box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);border-radius: 20px; ">
+    <div class="row mx-auto">
+        <div class="col-lg-6">
+        
+            <iframe style="border:20px;padding: 30px 30px; width: 100%; height:100%;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+          <!-- End Google Maps -->
+        </div>
+    <div class="col-lg-6 p-0 mt-4">
+
+      <!-- Start of Form  -->
+      <form [formGroup]="formdata"   #userlogin="ngForm" (ngSubmit)="onClickSubmuit()" autocomplete="on" action="forms/contact.php" role="form"  method="post">
+        <div class="row mx-auto mb-5">
+            <div class="col-6">
+                <label for="exampleInputname1" class="form-label text-primary" >First name</label>
+                <input 
+                type="text" 
+                name="firstname" 
+                formControlName="firstname" 
+                class="form-control rounded-2" 
+                placeholder="First Name" 
+                id="exampleInputname1" 
+                aria-describedby="nameHelp"  
+                required 
+                [(ngModel)]="fname"
+                (blur)="validateName()"
+                >
+                <div id="nameHelp" class="form-text" *ngIf="nameError">Your First name is required </div>
+              
+            </div>
+            <div class="col-6">
+                <label for="exampleInputname2" class="form-label text-primary">Last Name</label>
+                <input 
+                type="text" 
+                 name="lastname" 
+                 formControlName="lastname" 
+                 class="form-control rounded-2" 
+                  placeholder="Last Name" 
+                  id="exampleInputname2" 
+                  aria-describedby="nameHelp"  
+                  required 
+                  [(ngModel)]="lname"
+                  (blur)="validateName()">
+                <div id="nameHelp" class="form-text" *ngIf="nameError">Your Last name is required</div>
+              
+            </div>
+        </div>
+        <div class="row mx-auto mb-5">
+          <div class="col-6">
+              <label for="exampleInputemail" class="form-label text-primary" >Email Address</label>
+              <input 
+              type="email"  
+              name="email"  
+              autocomplete="on" 
+              formControlName="email" 
+              class="form-control rounded-2"
+               placeholder="Enter you email" 
+               id="exampleInputemail" 
+               aria-describedby="Helemailp"  
+               required 
+               [(ngModel)]="email"
+             
+               (blur)="validateEmail()">
+              <div id="emailHelp" class="form-text" *ngIf="emailError">Email Address required</div>
+            
+          </div>
+          <div class="col-6">
+              <label for="exampleInputphone" class="form-label text-primary"  >Phone</label>
+              <input 
+              type="number"   
+              name="phone" 
+              formControlName="phone"
+              class="form-control rounded-2"  
+              placeholder="Example:xx-xxx-xxx" 
+              id="exampleInputphone" 
+              aria-describedby="phoneHelp"
+              min="1111111" max="99999999" 
+              required 
+              
+              [(ngModel)]="phone"
+              (blur)="validatePhone()">
+              <div id="phoneHelp" class="form-text" *ngIf="phoneError">Phone number required</div>
+            
+          </div>
+      </div>
+      <div class="row mx-auto mb-5">
+        <div class="col-12">
+          <label for="exampleInputMessage" class="form-label text-primary" >Message</label>
+          <textarea 
+          class="form-control"  
+          name="message" 
+          formControlName="message" 
+          id="exampleInputMessage"  
+          rows="9" 
+          placeholder="Write your message..."
+          required 
+          [(ngModel)]="message"
+          
+          ></textarea>  
+        </div>
+       
+    </div>
+    <div class="d-flex justify-content-center">
+      <button class="btn bg-primary text-white rounded-pill p-3 px-5 border-0 my-5"  [disabled]="validateName() ||validateEmail() || validatePhone() " type="submit" ><img src="/assets/images/kiteSend.svg" class="px-2" alt="">Send Message</button>
+    </div> 
+   </form>
+     
+        </div>
+    </div>
+    </div>
+      
+    
+
+    </div>
+</div>
+
+
+
+
+    

@@ -1,0 +1,129 @@
+<h1  class="display-1 text-primary text-center">04</h1>
+<h1 class="display-4 text-uppercase text-black text-center mb-5">Lend your car</h1>
+<section id="contact" class="contact mb-5 mx-1">
+    <div class="container" data-aos="fade-down">
+      <!-- (ngSubmit)="addCar()" -->
+      <form class="form row g-3"  [formGroup]="addForm" novalidate>
+        <input type="hidden" name="id" formControlName="id">
+        <!-- form elements go here -->
+      
+        <div class="col-md-12">
+          <label for="name">Car Name</label>
+          <input required 
+          name="name"
+          type="text" 
+          class="form-control" 
+          id="name" 
+          placeholder="Car Name"
+          formControlName="name"
+          [(ngModel)]="name" 
+           />
+    
+        </div>
+        <div class="col-md-6">
+          <label for="price">Car Price</label>
+          <input required
+          name="price"
+            type="number"
+            min="0.01"
+            step="0.01"
+            class="form-control"
+            id="price"
+            placeholder="Car Price"
+            formControlName="price"
+            [(ngModel)]="price"
+            
+          />
+        </div>
+        <div class="col-md-6">
+            <label for="model">Car Model</label>
+            <input required
+              name="model"
+              type="number"
+              min="2000"
+              max="2024"
+              step="1"
+              class="form-control"
+              id="model"
+              placeholder="Car Year"
+            formControlName="model"
+              [(ngModel)]="model"
+              
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="type">Car Type</label>
+            <input required
+              name="type"
+              type="text"
+              class="form-control"
+              id="type"
+              placeholder="Automatic or Manual"
+            formControlName="type"
+              [(ngModel)]="type"
+              
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="price">Car Kilometer</label>
+            <input required
+              type="number"
+              min=""
+              name="kilometer"
+              step=""
+              min="10"
+              class="form-control"
+              id="Kilometer"  
+              placeholder="200,000km"
+            formControlName="kilometer"
+              [(ngModel)]="kilometer"
+              
+            />
+          </div>
+        <div class="form-group">
+          <label for="description">Car Description</label>
+          <input required
+            type="text"
+            name="description"
+            class="form-control"
+            id="description"
+            placeholder="Car Description"
+            [(ngModel)]="description"
+          />
+        </div>
+    
+        <div class="form-check form-switch">
+            <input 
+            required class="form-check-input required" 
+            type="checkbox" role="switch" 
+            name="isAvailable"
+            id="isAvailable" 
+            formControlName="isAvailable"
+            [(ngModel)]="isAvailable" />
+    
+          <label class="form-check-label" for="isAvailable">
+            Is Car available in stock?
+          </label>
+        </div>
+    
+        <div class="form-group">
+          <label for="select-image">Select Car image</label>
+          <input required type="file" class="form-control" id="select-image" 
+          formControlName="name"
+          formControlName="image"
+          name="image"
+          [(ngModel)]="image" />
+          
+        </div>
+    <div class="text-center">
+      <!-- (click)="addCar()" -->
+        <button type="submit" id="submit-button"  (click)="onSubmit()" class="btn btn-primary mx-2"> Add Car</button>
+        <button type="button"  (click)="Cancel()" class='btn btn-primary mx-2' > Cancel</button>
+    </div>
+       
+      </form>
+     
+
+    </div>
+  </section>
+  

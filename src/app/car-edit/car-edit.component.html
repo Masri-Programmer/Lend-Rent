@@ -1,0 +1,39 @@
+
+<div class="container-fluid py-5">
+  <div class="container pt-5 pb-3">
+<div class="container d-flex edition justify-content-start p-5" >
+    <div class="text‐center"><h1>Edit Car</h1></div>
+    <div style="width:50%;margin:0 auto">
+      <form [formGroup]="addForm" novalidate class="form">   
+        <input type="hidden" name="id" formControlName="id">
+        <div class="row">
+            <div class="col-md-6 mb-4"><h5>Name</h5></div>
+            <div class="col-md-6"><input type="text" class="form-control" name="name" formControlName="name"></div>
+          </div>
+        <div class="row">
+            <div class="col-md-6 mb-4"><h5>Model</h5></div>
+            <div class="col-md-6"><input type="text" class="form-control" name="model" formControlName="model"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4"><h5>Type</h5></div>
+            <div class="col-md-6"><input type="text" class="form-control" name="type" formControlName="type"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4"><h5>Price</h5></div>
+            <div class="col-md-6"><input type="text" class="form-control" name="price" formControlName="price"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4"><h5>Kilometer</h5></div>
+            <div class="col-md-6"><input type="text" class="form-control"  name="kilometer" formControlName="kilometer"></div>
+          </div>
+          
+            <div class="col‐md‐12 mt-5 d-flex justify-content-end">
+              <button class="edit"   (click)="onEdit()"><h5>EDIT CAR</h5></button>
+              
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+    </div>
+    
